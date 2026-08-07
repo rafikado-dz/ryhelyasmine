@@ -226,6 +226,19 @@
   .cbox b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-deep);margin-bottom:6px}
   .cbox a,.cbox span{font-size:1.06rem;color:var(--green-deep);font-weight:600}
 
+  /* ---------- Localisation ---------- */
+  .map{background:linear-gradient(180deg,var(--ivory),var(--cream))}
+  .map-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:36px;align-items:stretch}
+  .map-info{background:var(--white);border:1px solid rgba(201,162,77,.22);border-radius:20px;padding:38px 32px;display:flex;flex-direction:column;justify-content:center}
+  .map-info h3{font-size:1.5rem;color:var(--green-deep);margin-bottom:14px}
+  .map-info .addr{display:flex;gap:14px;align-items:flex-start;margin:10px 0 22px}
+  .map-info .addr .ic{flex:0 0 auto;width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--green-mid),var(--green-deep));color:var(--gold-light);display:grid;place-items:center}
+  .map-info .addr b{display:block;font-size:1.05rem;color:var(--green-deep)}
+  .map-info .addr span{color:var(--muted);font-size:.95rem}
+  .map-info p.note{color:var(--muted);font-size:.92rem;margin-bottom:24px}
+  .map-embed{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(201,162,77,.25);min-height:420px}
+  .map-embed iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
   /* ---------- Footer ---------- */
   footer{background:var(--green-deep);color:rgba(255,255,255,.75);padding:64px 0 26px}
   .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
@@ -257,7 +270,9 @@
     nav.links.open{display:flex;position:absolute;top:78px;left:0;right:0;background:var(--ivory);flex-direction:column;padding:22px 24px;gap:18px;border-bottom:1px solid rgba(201,162,77,.25);box-shadow:0 14px 26px -18px rgba(0,0,0,.3)}
     .menu-toggle{display:block}
     header .btn{display:none}
-    .about-grid,.book-grid,.salon-grid{grid-template-columns:1fr;gap:38px}
+    .about-grid,.book-grid,.salon-grid,.map-grid{grid-template-columns:1fr;gap:38px}
+    .map-embed{min-height:320px}
+    .map-embed iframe{min-height:320px}
     .about-visual .seal{width:110px;right:-10px;bottom:-16px}
     .ev-grid,.rev-cards,.contact-grid{grid-template-columns:1fr}
     .gal-grid{grid-template-columns:repeat(3,1fr)}
@@ -306,6 +321,7 @@
       <a href="#galerie">Galerie</a>
       <a href="#avis">Avis</a>
       <a href="#rendezvous">Rendez-vous</a>
+      <a href="#localisation">Localisation</a>
     </nav>
     <a href="#rendezvous" class="btn" style="margin-left:22px">Prendre rendez-vous</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -598,6 +614,39 @@
   </div>
 </section>
 
+<!-- ============ LOCALISATION ============ -->
+<section class="map" id="localisation">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Où nous trouver</span>
+      <h2>Notre établissement</h2>
+      <p>Venez nous rencontrer pour imaginer ensemble votre événement.</p>
+    </div>
+    <div class="map-grid">
+      <div class="map-info">
+        <h3>Ryh El Yasmine</h3>
+        <div class="addr">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <b>Rue El Boustane, Haï El Badr</b>
+            <span>Kouba, Alger 16000 — Algérie</span>
+          </div>
+        </div>
+        <p class="note">Et si vous ne pouvez pas vous déplacer, nous venons à vous : nos prestations se font aussi bien en salle qu'à domicile.</p>
+        <a class="btn gold" href="https://maps.app.goo.gl/ystSjcZMiZHoGZcb8" target="_blank" rel="noopener" style="align-self:flex-start">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.5-2.5V4L9 6.5 15 4l5.5 2.5V20L15 17.5 9 20z"/><path d="M9 6.5V20M15 4v13.5"/></svg>
+          Obtenir l'itinéraire
+        </a>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Ryh+El+Yasmine,+Kouba,+Alger&z=16&output=embed&hl=fr"
+          title="Localisation de Ryh El Yasmine à Kouba, Alger"
+          loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
@@ -639,10 +688,11 @@
           <li><a href="#galerie">Galerie</a></li>
           <li><a href="#avis">Avis</a></li>
           <li><a href="#rendezvous">Rendez-vous</a></li>
+          <li><a href="#localisation">Localisation</a></li>
         </ul>
       </div>
     </div>
-    <div class="foot-bottom">© <span id="year"></span> Ryh El Yasmine · +213 549 09 86 48 · Tous droits réservés.</div>
+    <div class="foot-bottom">© <span id="year"></span> Ryh El Yasmine · Rue El Boustane, Haï El Badr, Kouba, Alger · +213 549 09 86 48 · Tous droits réservés.</div>
   </div>
 </footer>
 
@@ -654,7 +704,7 @@
 <div class="lightbox" id="lightbox">
   <button class="lb-btn lb-close" id="lbClose" aria-label="Fermer">&times;</button>
   <button class="lb-btn lb-nav lb-prev" id="lbPrev" aria-label="Précédent">&#8249;</button>
-  <img id="lbImg" src="" alt="">
+  <img id="lbImg" alt="">
   <button class="lb-btn lb-nav lb-next" id="lbNext" aria-label="Suivant">&#8250;</button>
 </div>
 
