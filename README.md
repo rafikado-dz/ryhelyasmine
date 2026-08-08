@@ -12,23 +12,11 @@ Projet lié à la page Facebook [Ryh el Yasmine](https://www.facebook.com/ryhely
 ```
 index.html              Site vitrine (fichier unique, sans dépendance)
 images/                 Photos du site, optimisées web (~3 Mo)
-marque/
-  livrables/            ⭐ Fichiers finaux prêts à l'emploi
-  sources/              Sources éditables (HTML/CSS) du logo et de la couverture
-    photos-hd/          Photos originales HD utilisées pour la couverture
-apercus/                Maquettes de rendu sur la page Facebook
+CNAME                   Domaine personnalisé (ryhelyasmine.com)
 ```
 
-## Livrables
-
-| Fichier | Dimensions | Usage |
-|---|---|---|
-| `marque/livrables/logo-profil.png` | 2000×2000 | Photo de profil Facebook |
-| `marque/livrables/logo-transparent.png` | 2000×2000 | Logo détouré (site, documents) |
-| `marque/livrables/couverture-facebook.png` | 1640×664 | Photo de couverture Facebook |
-| `marque/livrables/couverture-HD.png` | 3280×1328 | Master d'archive / impression |
-
-Les variantes `*-ivoire` et `*-avec-embleme` sont des alternatives conservées.
+Les fichiers sources de la marque (logo, couverture, photos haute résolution,
+maquettes) sont conservés à part, dans un dépôt privé.
 
 ## Coordonnées
 
@@ -49,21 +37,6 @@ Fonctionnalités :
 - Prise de rendez-vous avec calendrier, qui génère un message pré-rempli
   vers le WhatsApp de la page (`wa.me/213549098648`)
 - Responsive (mobile, tablette, ordinateur)
-
-### Régénérer le logo ou la couverture
-
-Les visuels sont produits en HTML/CSS puis exportés en PNG :
-
-```bash
-cd marque/sources
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-  --headless --disable-gpu --hide-scrollbars \
-  --force-device-scale-factor=3 --window-size=1640,664 \
-  --screenshot=couverture.png coverB.html
-```
-
-Puis réduire à 1640×664 (`sips -Z 1640 couverture.png`) — le suréchantillonnage
-donne un rendu nettement plus net qu'un export direct.
 
 ### Note sur la couverture Facebook
 

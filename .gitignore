@@ -1,3 +1,7 @@
 .DS_Store
 **/.DS_Store
 *.tmp
+
+# Fichiers de travail — conservés en local et dans le dépôt privé
+marque/
+apercus/
